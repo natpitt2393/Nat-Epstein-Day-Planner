@@ -32,19 +32,20 @@ function clickSave(event) {
 function changeTimeBlocksColor() {
     // This line of code allows us to loop through the time-block classes 
     $(".time-block").each(function () {
-        let blockHour = parseInt($(this).attr("id").replace("hour-", ""));
-        //console.log(blockHour);
         //We only want the number (integer) to be parsed through so we have to get make sure that any letters or characters that aren't intergers are not included
+        let eachBlockHour = parseInt($(this).attr("id").replace("hour-", ""));
+        //console.log(eachBlockHour);
+        // This next variable will store what hour it is currently
         let currentHour = parseInt(moment().format("H"));
         //console.log(currentHour);
         // We need to remove the classes from the time blocks so that they can change according to the current time
         $(this).removeClass("past present future");
         // We need these conditional statements to know what each time block color is going to be
         // for all future hours relative to current hour the block will appear green
-        if (blockHour > currentHour) {
+        if (eachBlockHour > currentHour) {
             $(this).addClass("future");
-            // for all future hours relative to the current hour the block will appear green
-        } else if (blockHour < currentHour) {
+            // For all future hours relative to the current hour the block will appear green
+        } else if (eachBlockHour < currentHour) {
             $(this).addClass("past");
             // Otherwise it means the hour is present and the block will appear red
         } else {
