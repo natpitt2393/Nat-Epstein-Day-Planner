@@ -1,7 +1,8 @@
 function setTime() {
     // We want to grab the div id of currentDay and then display it right under the description of the app. We can acheive this using jQuery to select the html div id and then using the moment library to capture what day it is
     $("#currentDay").text(moment().format('MMMM Do YYYY'));
-    // alternative way to do this through Web APIs
+    // Alternative way to do this through Web APIs
+    // Using regular APIs would take a very long time, especially for looping through objects. That's why we are going to use jQuery
     //let currentDay = document.getElementById('currentDay');
     //currentDay.textContent = moment().format('MMMM Do YYYY');
 
