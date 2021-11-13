@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Work Day Scheduler</title>
+</head>
+
+<body>
+    <header class="jumbotron">
+        <h1 class="display-3">Work Day Scheduler</h1>
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+        <!--need to program moment.js for p tag below for showing the current time/day-->
+        <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+        <!-- Timeblocks go here -->
+        <!--First we need to create an individual row for each hour in the time block. By creating a row each hour (e.g. 9 AM and 10 AM will be in separate rows--this is why you must delineate in the bootstrap code for each hour. Otherwise the descriptions and save buttons would all be in one row).-->
+        <div id="9-AM" class="row time-block">
+            <!--We then add a column; since the actual column with the time is relatively small (compared to the text area which can tend to get big depending on what we put inside there, we can set it to medium and larger screens will show this as 1) -->
+            <div class="col-md-1 hour">
+                9AM
+            </div>
+            <!--We need a textarea tag for the 2nd element in the row so that we can enter the description of what we plan to do during that hour block-->
+            <textarea class="col-md-10 description"></textarea>
+            <!--the fa in i class means that we are using the font awesome api to get the save icon within the button-->
+            <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+       <div id="10-AM" class="row time-block">
+           <div class="col-md-1 hour">
+               10AM
+           </div>
+           <textarea class="col-md-10 description"></textarea>
+           <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+       </div>
+       <div id="11-AM" class="row time-block">
+        <div class="col-md-1 hour">
+            11AM
+        </div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+    </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
