@@ -17,12 +17,13 @@
     <header class="jumbotron">
         <h1 class="display-3">Work Day Scheduler</h1>
         <p class="lead">A simple calendar app for scheduling your work day</p>
-        <!--need to program moment.js for p tag below for showing the current time/day-->
+        <!--Need to program moment.js for p tag below for showing the current time/day-->
         <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
         <!-- Timeblocks go here -->
         <!--First we need to create an individual row for each hour in the time block. By creating a row each hour (e.g. 9 AM and 10 AM will be in separate rows--this is why you must delineate in the bootstrap code for each hour. Otherwise the descriptions and save buttons would all be in one row).-->
+        <!--In order for the conditional statements in js to work we are going to need to have the hour integers to go according to military time (24hr clock) and not a 12hr clock-->
         <div id="hour-9" class="row time-block">
             <!--We then add a column; since the actual column with the time is relatively small (compared to the text area which can tend to get big depending on what we put inside there, we can set it to medium and larger screens will show this as 1) -->
             <div class="col-md-1 hour">
