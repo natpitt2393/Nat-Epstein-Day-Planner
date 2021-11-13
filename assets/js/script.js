@@ -1,8 +1,9 @@
 function setTime() {
     // We want to grab the div id of currentDay and then display it right under the description of the app. We can acheive this using jQuery to select the html div id and then using the moment library to capture what day it is
-    //$("#currentDay").text(moment().format('MMMM Do YYYY'));-this is the jQuery method to access the currentDay id and then display it on screen
-    let currentDay = document.getElementById('currentDay');
-    currentDay.textContent = moment().format('MMMM Do YYYY');
+    $("#currentDay").text(moment().format('MMMM Do YYYY'));
+    // alternative way to do this through Web APIs
+    //let currentDay = document.getElementById('currentDay');
+    //currentDay.textContent = moment().format('MMMM Do YYYY');
 
     // We are calling the function changeTimeBlocksColor (this function allows the program to change each of the time block colors depending on whether the time block is in the past, present or future relative to the current time). We also want the program to be able to update the blocks every minute so we must set the interval to 60000 miliseconds, which is equivalent to 1 minute
     changeTimeBlocksColor();
