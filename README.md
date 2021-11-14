@@ -8,7 +8,7 @@ Description: In order to initially set up the actual formatting of each time blo
 
 The logic of the program had three different elements. One was to show the current day. The second was to have the text area for each hour to be able to be saved within local storage. Finally the logic to make sure that each color of the text area would change according to its relativity to the current time (future-green, past-gray, present-red). 
 
-I also added two extra hours to the day planner because it's becoming increasingly common for the business day for many companies to extend past 5 PM.
+I also added two extra hours to the day planner because it's becoming increasingly common for the business day for many companies to extend past 5 PM. 
 
 Known-bugs: N/A
 
@@ -26,4 +26,3 @@ Screenshots of website:
 
 Sources: https://fontawesome.com/v5.15/icons/save?style=solid (this was so I could use the save icon in font awesome)
 
-Asked tutor and ASKBCS for help with local storage and talked through with them about how to go about the logic to change the color for the text areas relative to the current time.

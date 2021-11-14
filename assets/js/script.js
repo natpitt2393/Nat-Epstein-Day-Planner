@@ -15,7 +15,7 @@ function setTime() {
         let blockId = $(this).attr("id");
         //console.log(blockId);
         // This line of code allows us to retrieve any of the stored data within the text box for each hour
-        $("#" + blockId + " textarea").text(localStorage.getItem(moment().format("MMMM Do YYYY") + blockId));
+        $("#" + blockId + " textarea").text(localStorage.getItem(moment().format("MMMM Do YYYY, h:mm:ss a") + blockId));
     });
 
     // This is the event listener when we click the save button
@@ -27,14 +27,14 @@ setTime();
 // This will allow the save button, when clicked, to store data to local storage
 function clickSave(event) {
     let hourId = $(this).parent().attr("id");
-    localStorage.setItem(moment().format("MMMM Do YYYY") + hourId, $("#" + hourId + " textarea").val());
+    localStorage.setItem(moment().format("MMMM Do YYYY, h:mm:ss a") + hourId, $("#" + hourId + " textarea").val());
 };
 
 function changeTimeBlocksColor() {
     // This line of code allows us to loop through the time-block classes 
     $(".time-block").each(function () {
         //We only want the number (integer) to be parsed through so we have to get make sure that any letters or characters that aren't intergers are not included
-        let eachBlockHour = parseInt($(this).attr("id").replace("hour-", ""));
+        let eachBlockHour = parseInt($(this).attr("id").replace("hour-time-", ""));
         //console.log(eachBlockHour);
         // This next variable will store what hour it is currently
         let currentHour = parseInt(moment().format("H"));
