@@ -13,21 +13,22 @@ function setTime() {
     // This loops through the time-block class
     $(".time-block").each(function () {
         let blockId = $(this).attr("id");
-        //console.log(blockId);
         // This line of code allows us to retrieve any of the stored data within the text box for each hour
-        $("#" + blockId + " textarea").text(localStorage.getItem(moment().format("MMMM Do YYYY, h:mm:ss a") + blockId));
+        $('#' + blockId + ' .description').val(localStorage.getItem(blockId));
+        //console.log(blockId);
+       // console.log(localStorage.getItem('#' + blockId));
     });
 
     // This is the event listener when we click the save button
     $(".saveBtn").on("click", clickSave);
-}
+};
 // Calling the setTime function so that the code will execute 
 setTime();
 
-// This will allow the save button, when clicked, to store data to local storage
+// This will allow the save button, when clicked, to store the data from the text area to local storage
 function clickSave(event) {
     let hourId = $(this).parent().attr("id");
-    localStorage.setItem(moment().format("MMMM Do YYYY, h:mm:ss a") + hourId, $("#" + hourId + " textarea").val());
+    localStorage.setItem(hourId, $("#" + hourId + " textarea").val()); 
 };
 
 function changeTimeBlocksColor() {
@@ -54,5 +55,6 @@ function changeTimeBlocksColor() {
         }
     });
 };
+
 
 
